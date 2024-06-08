@@ -1,0 +1,133 @@
+.card{
+  border: 1px solid rgb(75, 67, 67);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 10px;
+  text-align: left;
+  width: 300px;
+  height: 250px;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-button{
+  background-color: rgb(47, 255, 78);
+  color: white;
+ border: none;
+  border-radius: 8px;
+  padding: 10px 8px;
+  cursor: pointer;
+  position: relative;
+ }
+
+
+ .card-content {
+  flex: 1; /* Allow content to grow and take available space */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: wrap; /* Prevent text from wrapping */
+}
+
+
+.tooltip {
+  position: relative;
+  top: 0%; /* Position below the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: #333; 
+  color: #fff; 
+  padding: 5px 10px; 
+  border-radius: 4px; 
+  opacity: 0.9; 
+  transition: opacity 0.3s; /* Fade in/out transition */
+  z-index: 1; /* Ensure tooltip appears above other content */
+}
+
+.tooltip::after {
+  content: ''; 
+  position: absolute;
+  top: -5px; 
+  left: 50%; 
+  margin-left: -5px; 
+  border-width: 5px; 
+  border-style: solid;
+  border-color: transparent transparent #333 transparent; 
+}
+.book-name{
+  display: flex;
+  overflow-wrap: normal;
+}
+.add-shelf-button{
+  position: absolute;
+  right:50px;
+  top: 30px;
+  text-decoration: none;
+}
+
+.headerr{
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+ }
+.myBookShelf{
+  color:black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.myBookShelf-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+.books-list {
+  display: flex; /* Use flexbox to layout the cards */
+  flex-wrap: wrap; /* Allow the cards to wrap to the next line */
+  justify-content: center; /* Center the cards */
+  gap: 20px; /* Gap between the cards */
+}
+
+@media (max-width: 1200px) {
+  .books-list {
+      justify-content: space-around; /* Adjust alignment for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .books-list {
+      justify-content: center; /* Center cards for medium screens */
+      gap: 10px; /* Reduce gap for medium screens */
+  }
+  .card-button{
+    font-size: 18px;
+    width:80px;
+
+  }
+  .headerr{
+    font-size: 15px;
+   }  
+}
+
+@media (max-width: 480px) {
+  .books-list {
+      flex-direction: column; /* Stack cards vertically for small screens */
+      align-items: center; /* Center cards */
+      gap: 10px; /* Reduce gap for small screens */
+  }
+  .card-button{
+    font-size: 8px;
+    width:60px;
+
+  }
+  .headerr{
+    font-size: 15px;
+   }
+}
